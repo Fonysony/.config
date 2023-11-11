@@ -50,7 +50,8 @@ bindsym XF86AudioLowerVolume exec amixer set Master 1%-
 bindsym XF86AudioMute exec amixer set Master toggle
 
 #Brightness
-bindsym XF86MonBrightnessUp exec cat /sys/class/backlight/acpi_video0/brightness >> DawnADick
+#bindsym XF86MonBrightnessUp exec --no-startup-id /home/fonysony/bin/brightness_control.sh up
+#bindsym XF86MonBrightnessDown exec --no-startup-id /home/fonysony/bin/brightness_control.sh down
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient

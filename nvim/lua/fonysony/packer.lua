@@ -38,6 +38,11 @@ return require('packer').startup(function(use)
       }
    }
 
+   use {
+      'vscode-langservers/vscode-html-languageserver-bin',
+      run = 'yarn global add vscode-html-languageserver-bin',
+   }
+
    local lsp_zero = require('lsp-zero')
 
    lsp_zero.on_attach(function(client, bufnr)

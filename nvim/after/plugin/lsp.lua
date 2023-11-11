@@ -24,7 +24,7 @@ cmp.setup({
       ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
       ['<C-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
       ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-      ['<C-c>'] = cmp.mapping.abort(),
+      -- ['<C-c>'] = cmp.mapping.abort(),
       ['<Return>'] = cmp.mapping.confirm(),
       ['<C-Space>'] = cmp.mapping.complete(),
    })

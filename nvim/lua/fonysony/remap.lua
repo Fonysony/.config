@@ -1,3 +1,7 @@
+local current_file = vim.fn.expand("%");
+local file_extension = vim.fn.expand("%:e");
+local config_path = vim.fn.stdpath('config')
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -13,5 +17,28 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Compile and Run gcc
-vim.keymap.set("n", "<leader>g", [[:w<CR>:split<CR>:wincmd l<CR>:execute 'lcd ' . expand('%:p:h')<CR>:terminal gcc % -o %:r && ./%:r<CR>]], { noremap = true, silent = true })
+
+-- Set up a key mapping that calls the showMenu function
+vim.api.nvim_set_keymap('n', '<leader>m', [[:lua require('fonysony.remap').showMenu()<CR>]], { noremap = true, silent = true })
+
+-- Define the function that shows the menu
+function showMenu()
+   local choices = {'1: gcc', '2: g++'}
+   local choice = vim.fn.inputlist(choices)
+
+   if choice > 0 then
+      if choice == 1 then
+         vim.keymap.set("n", "<leader>g", [[:w<CR>:split<CR>:wincmd l<CR>:execute 'lcd ' . expand('%:p:h')<CR>:terminal gcc % -o %:r && ./%:r<CR>]], { noremap = true, silent = true })
+      elseif choice == 2 then
+         vim.keymap.set("n", "<leader>g", [[:w<CR>:split<CR>:wincmd l<CR>:execute 'lcd ' . expand('%:p:h')<CR>:terminal g++ % -o %:r && ./%:r<CR>]], { noremap = true, silent = true })
+      end
+   else
+      print("Menu canceled")
+   end
+end
+
+-- Export the showMenu function to be accessible from the key mapping
+return {
+   showMenu = showMenu
+}
 
