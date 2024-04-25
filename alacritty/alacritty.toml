@@ -1,0 +1,21 @@
+import = ["/home/fonysony/.config/alacritty/color-themes/themes/gotham.toml"]
+
+[font]
+size = 8
+
+[font.normal]
+family = "Press Start 2P"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 4
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Super|Shift"
+
+[window]
+decorations = "none"
+opacity = 0.7
