@@ -24,5 +24,7 @@ package-lock.json
 yarn.lock
 
 # Ignore directories
-./*
+*
 !nvim/
+!alacritty/
+!i3/
