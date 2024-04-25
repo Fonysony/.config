@@ -28,3 +28,4 @@ yarn.lock
 !nvim/
 !alacritty/
 !i3/
+!.bin/
