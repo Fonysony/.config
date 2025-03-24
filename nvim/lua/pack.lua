@@ -46,6 +46,9 @@ require('packer').startup(function(use)
 	-- Autopair
 	use 'windwp/nvim-autopairs'
 
+   -- Godot
+   use 'habamax/vim-godot'
+
    -- Automatically set up your configuration after cloning packer.nvim
    -- Put this at the end after all plugins
    if packer_bootstrap then

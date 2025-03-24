@@ -41,4 +41,7 @@ lsp_zero.on_attach(function(client, bufnr)
    vim.keymap.set('n', ']d', function() vim.diagnostic.goto_prev() end, opts)
 end)
 
+-- Godot LSP
+
 require("lspconfig").gdscript.setup({ capabilities = capabilities })
+vim.keymap.set('n', '<leader>sg', function () vim.fn.serverstart '127.0.0.1:6007' end, { noremap = true })

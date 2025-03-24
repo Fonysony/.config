@@ -143,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fonysony/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["vim-godot"] = {
+    loaded = true,
+    path = "/home/fonysony/.local/share/nvim/site/pack/packer/start/vim-godot",
+    url = "https://github.com/habamax/vim-godot"
   }
 }
 
