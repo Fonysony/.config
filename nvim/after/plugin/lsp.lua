@@ -1,4 +1,4 @@
-local lsp_zero = require('lsp-zero')
+local lsp_zero = require("lsp-zero")
 
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
@@ -6,8 +6,8 @@ lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
-require('mason').setup({})
-require('mason-lspconfig').setup({
+require("mason").setup({})
+require("mason-lspconfig").setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
   ensure_installed = { 'html', 'cssls', 'ts_ls', 'jsonls', 'eslint', 'rust_analyzer', 'clangd', 'csharp_ls', 'lua_ls' },
@@ -16,7 +16,7 @@ require('mason-lspconfig').setup({
   },
 })
 
-local cmp = require('cmp')
+local cmp = require("cmp")
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 cmp.setup({
@@ -41,3 +41,4 @@ lsp_zero.on_attach(function(client, bufnr)
    vim.keymap.set('n', ']d', function() vim.diagnostic.goto_prev() end, opts)
 end)
 
+require("lspconfig").gdscript.setup({ capabilities = capabilities })
